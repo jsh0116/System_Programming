@@ -1,30 +1,19 @@
 # System_Programming
 
-## Advanced Echo Server
+## 'ls' command implementation
 
 ### 1. Intro
-이번 Assignment3-2에서는 Advanced echo server를 구현하는 것이다. client에서 text 내용을 입력하면 그 정보를 server에 보낸 후 text를 그대로 다시 client로 가져와 출력한다. server에서는 client에서 text를 보낼 때 child process를 생성한 후 parent와 child에서 각각의 역할수행이 이루어진다. 보낸 text가 QUIT일 때 Parent에서 child status 판단, Child process terminated 처리를 구현하고 다중 접속할 때도 추가하였다. 쉽게 확인하기 위해서 loopback “127.0.0.1”을 사용하였다.
+Assignment2-2는 ls command implemetation으로 input 디렉토리 경로의 정보를 출력하는 것인데 그 중 only file name만 출력하도록 했다 (‘.’ : current directory, ‘..’ : parent directory 포함) 디렉토리 정보를 확인하기 위해 opendir(), readdir(), closedir()를 사용하였고, 파일 정보인지 확인하기 위해 lstat function, current, parent directory를 포함하여 출력하기 위해 strcmp function를 사용하였다.
 
 ### 2. Flow Chart
-![image](https://user-images.githubusercontent.com/62865808/88546174-f4bccc00-d056-11ea-81cc-3c8c492391b0.png)
+![image](https://user-images.githubusercontent.com/62865808/88551171-84657900-d05d-11ea-85f9-77889fc8e412.png)
 
 ### 3. Result
 
-* Server 실행, Client 실행 및 연결 확인
+* File existed in Directory
 
-![image](https://user-images.githubusercontent.com/62865808/88546237-0aca8c80-d057-11ea-8fcc-6f14dd10065f.png)
+![image](https://user-images.githubusercontent.com/62865808/88551289-a9f28280-d05d-11ea-8803-65cf55163bfb.png)
 
-* Text 전송 및 수신 확인
+* No file in Directory
 
-![image](https://user-images.githubusercontent.com/62865808/88546325-2e8dd280-d057-11ea-9098-e34856c34a4b.png)
-
-* 서버에 QUIT 명령어 전달 후 SIGALRM, SIGCHLD 호출
-
-![image](https://user-images.githubusercontent.com/62865808/88546356-3baac180-d057-11ea-87ad-62bc47771483.png)
-
-그 이후 1~2초 후에 Client 자동 종료
-
-* Client 다중 접속한 경우
-
-![image](https://user-images.githubusercontent.com/62865808/88546433-55e49f80-d057-11ea-9b74-5d88aee66fea.png)
-
+![image](https://user-images.githubusercontent.com/62865808/88551392-c7bfe780-d05d-11ea-89cb-3850e07ce431.png)
