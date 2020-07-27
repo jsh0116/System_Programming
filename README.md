@@ -14,13 +14,12 @@
 ![image](https://user-images.githubusercontent.com/62865808/88546237-0aca8c80-d057-11ea-8fcc-6f14dd10065f.png)
 
 * Text 전송 및 수신 확인
-
+![image](https://user-images.githubusercontent.com/62865808/88546325-2e8dd280-d057-11ea-9098-e34856c34a4b.png)
 
 * 서버에 QUIT 명령어 전달 후 SIGALRM, SIGCHLD 호출
-
-
-* 그 이후 1~2초 후에 Client 자동 종료
-
+![image](https://user-images.githubusercontent.com/62865808/88546356-3baac180-d057-11ea-87ad-62bc47771483.png)
+**그 이후 1~2초 후에 Client 자동 종료
 
 * Client 다중 접속한 경우
+![image](https://user-images.githubusercontent.com/62865808/88546433-55e49f80-d057-11ea-9b74-5d88aee66fea.png)
 
