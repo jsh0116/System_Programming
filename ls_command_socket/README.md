@@ -8,7 +8,7 @@
 ### 2. Flow Chart
 * Basic TCP/IP Client & Server structure
 
-![image](https://user-images.githubusercontent.com/62865808/88546174-f4bccc00-d056-11ea-81cc-3c8c492391b0.png)
+![image](https://user-images.githubusercontent.com/62865808/88552056-9398f680-d05e-11ea-9843-0c3c862d1ee8.png)
 
 * Designed flow chart
 
