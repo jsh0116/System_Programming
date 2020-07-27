@@ -3,28 +3,11 @@
 ## Advanced Echo Server
 
 ### 1. Intro
-이번 Assignment3-2에서는 Advanced echo server를 구현하는 것이다. client에서 text 내용을 입력하면 그 정보를 server에 보낸 후 text를 그대로 다시 client로 가져와 출력한다. server에서는 client에서 text를 보낼 때 child process를 생성한 후 parent와 child에서 각각의 역할수행이 이루어진다. 보낸 text가 QUIT일 때 Parent에서 child status 판단, Child process terminated 처리를 구현하고 다중 접속할 때도 추가하였다. 쉽게 확인하기 위해서 loopback “127.0.0.1”을 사용하였다.
+Assignment 2-1은 input argument count와 value를 참조해 특정 option을 지정하는 getopt function을 사용하여 어떠한 option이 사용되었고 그 옵션이 사용되었을 경우 뒤에 입력된 인자에 대해 처리하는 내용이다. 이 과제에서 요구사항은 옵션 -a -b -c가 각각 입력되었을 때 flag 출력 및 문자열 출력이다. 
 
 ### 2. Flow Chart
-![image](https://user-images.githubusercontent.com/62865808/88546174-f4bccc00-d056-11ea-81cc-3c8c492391b0.png)
+![image](https://user-images.githubusercontent.com/62865808/88550708-f093ad00-d05c-11ea-9324-64bfda5f71f3.png)
 
 ### 3. Result
 
-* Server 실행, Client 실행 및 연결 확인
-
-![image](https://user-images.githubusercontent.com/62865808/88546237-0aca8c80-d057-11ea-8fcc-6f14dd10065f.png)
-
-* Text 전송 및 수신 확인
-
-![image](https://user-images.githubusercontent.com/62865808/88546325-2e8dd280-d057-11ea-9098-e34856c34a4b.png)
-
-* 서버에 QUIT 명령어 전달 후 SIGALRM, SIGCHLD 호출
-
-![image](https://user-images.githubusercontent.com/62865808/88546356-3baac180-d057-11ea-87ad-62bc47771483.png)
-
-그 이후 1~2초 후에 Client 자동 종료
-
-* Client 다중 접속한 경우
-
-![image](https://user-images.githubusercontent.com/62865808/88546433-55e49f80-d057-11ea-9b74-5d88aee66fea.png)
-
+![image](https://user-images.githubusercontent.com/62865808/88550786-0acd8b00-d05d-11ea-840a-406c3df65f77.png)
