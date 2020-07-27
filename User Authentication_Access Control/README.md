@@ -1,30 +1,27 @@
 # System_Programming
 
-## Advanced Echo Server
+## User Authentication_Access Control
 
 ### 1. Intro
-이번 Assignment3-2에서는 Advanced echo server를 구현하는 것이다. client에서 text 내용을 입력하면 그 정보를 server에 보낸 후 text를 그대로 다시 client로 가져와 출력한다. server에서는 client에서 text를 보낼 때 child process를 생성한 후 parent와 child에서 각각의 역할수행이 이루어진다. 보낸 text가 QUIT일 때 Parent에서 child status 판단, Child process terminated 처리를 구현하고 다중 접속할 때도 추가하였다. 쉽게 확인하기 위해서 loopback “127.0.0.1”을 사용하였다.
+이번 Assignment 4-1에서는 User Authentication과 Access Control 을 구현하는 것이다.
+client에서 server로 해당 port와 IP 주소로 접근을 시도하면 Server에서 접근 가능한 IP인지
+access.txt에 저장되어 있는 IP주소(wildcard 처리 포함)로 판단하고 접근 불가능할 때는 올바른
+IP주소로 접속을 요구하고 접근 가능할 때 passwd에 저장되어 있는 ID와 PASSWORD를
+바탕으로 로그인이 성공했을 때와 3번 실패했을 때 다시 접속하도록 구현하였다.
 
 ### 2. Flow Chart
-![image](https://user-images.githubusercontent.com/62865808/88546174-f4bccc00-d056-11ea-81cc-3c8c492391b0.png)
+![image](https://user-images.githubusercontent.com/62865808/88549355-2899f080-d05b-11ea-86e9-250cae074892.png)
 
 ### 3. Result
 
-* Server 실행, Client 실행 및 연결 확인
+* 접속이 불가한 IP를 가진 Client가 접속할 경우
 
-![image](https://user-images.githubusercontent.com/62865808/88546237-0aca8c80-d057-11ea-8fcc-6f14dd10065f.png)
+![image](https://user-images.githubusercontent.com/62865808/88549485-4d8e6380-d05b-11ea-90fb-02592fbe37d8.png)
 
-* Text 전송 및 수신 확인
+* 성공적으로 로그인을 마친 경우
 
-![image](https://user-images.githubusercontent.com/62865808/88546325-2e8dd280-d057-11ea-9098-e34856c34a4b.png)
+![image](https://user-images.githubusercontent.com/62865808/88549649-86c6d380-d05b-11ea-9ea9-0b24bdc9634f.png)
 
-* 서버에 QUIT 명령어 전달 후 SIGALRM, SIGCHLD 호출
+* 로그인을 세 번 시도했지만 모두 실패한 경우
 
-![image](https://user-images.githubusercontent.com/62865808/88546356-3baac180-d057-11ea-87ad-62bc47771483.png)
-
-그 이후 1~2초 후에 Client 자동 종료
-
-* Client 다중 접속한 경우
-
-![image](https://user-images.githubusercontent.com/62865808/88546433-55e49f80-d057-11ea-9b74-5d88aee66fea.png)
-
+![image](https://user-images.githubusercontent.com/62865808/88549728-a2ca7500-d05b-11ea-87bf-1a49e3f49fad.png)
